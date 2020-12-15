@@ -9,7 +9,7 @@ use(solidity);
 
 describe('BasicToken', () => {
   const [wallet, walletTo] = new MockProvider().getWallets();
-  let token: Contract;
+  let token: BasicToken;
 
   beforeEach(async () => {
     token = await deployContract(wallet, BasicTokenArtifact, [1000]) as BasicToken;
