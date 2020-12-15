@@ -1,8 +1,7 @@
 import { ethers } from "hardhat";
-import { expect, use } from 'chai';
+import { expect, use } from "chai";
 import { solidity } from "ethereum-waffle";
 import { Counter } from "../typechain/Counter";
-
 
 use(solidity);
 
