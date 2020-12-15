@@ -1,5 +1,13 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "solidity.linter": "solhint"
+  "solidity.linter": "solhint",
+  "solidity.formatter": "prettier",
+  "solidity.enableLocalNodeCompiler": true,
+  "solidity.enabledAsYouTypeCompilationErrorCheck": true,
+  "solidity.packageDefaultDependenciesDirectory": "node_modules",
+  "solidity.solhintRules": {},
+  "solidity.validationDelay": 1500,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
