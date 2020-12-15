@@ -1,10 +1,11 @@
 import { ethers } from "hardhat";
-import chai from "chai";
+import { expect, use } from 'chai';
 import { solidity } from "ethereum-waffle";
 import { Counter } from "../typechain/Counter";
 
-chai.use(solidity);
-const { expect } = chai;
+
+use(solidity);
+
 describe("Counter", (): void => {
   let counter: Counter;
   beforeEach(async () => {

@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.7.0;
+pragma solidity ^0.7.5;
 
 import "hardhat/console.sol";
 
 contract Counter {
-  uint256 count = 0;
+  uint256 private count = 0;
 
   event CountedTo(uint256 number);
 

@@ -1,5 +1,4 @@
 import { expect, use } from 'chai';
-import { Contract } from 'ethers';
 import { deployContract, MockProvider, solidity } from 'ethereum-waffle';
 import BasicTokenArtifact from '../artifacts/contracts/BasicToken.sol/BasicToken.json';
 import { BasicToken } from '../typechain/BasicToken';
