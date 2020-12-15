@@ -4,7 +4,16 @@ import "@nomiclabs/hardhat-waffle";
 import "hardhat-typechain";
 
 const config: HardhatUserConfig = {
-  solidity: "0.7.5",
+  solidity: {
+    compilers: [{ version: "0.7.5", settings: {} }],
+  },
+  networks: {
+    hardhat: {},
+    // rinkeby: {
+    //   url: `https://rinkeby.infura.io/v3/${INFURA_API_KEY}`,
+    //   accounts: [RINKEBY_PRIVATE_KEY],
+    // },
+  },
 };
 
 export default config;
