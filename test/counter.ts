@@ -5,7 +5,7 @@ import { Counter } from "../typechain/Counter";
 
 chai.use(solidity);
 const { expect } = chai;
-describe("Counter", () => {
+describe("Counter", (): void => {
   let counter: Counter;
   beforeEach(async () => {
     // 1
@@ -34,7 +34,7 @@ describe("Counter", () => {
     // 5
     it("should fail", async () => {
       // this test will fail
-      await counter.countDown();
+      await expect(counter.countDown()).to.be.reverted;
     });
     it("should count down", async () => {
       await counter.countUp();

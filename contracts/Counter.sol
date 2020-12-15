@@ -22,9 +22,8 @@ contract Counter {
   }
 
   function countDown() public returns (uint256) {
-    if (count == 0) return 0;
-
     console.log("countDown: count=", count);
+    require(count > 0, "count must be greater than 0");
     uint256 newCount = count - 1;
     require(newCount < count, "uint256 underflow");
     count = newCount;
