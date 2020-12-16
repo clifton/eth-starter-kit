@@ -29,7 +29,7 @@ module.exports = {
     quotes: ['error', 'single'],
     'no-unused-expressions': 0,
     '@typescript-eslint/no-unused-expressions': 0,
-    'chai-friendly/no-unused-expressions': 2,
+    'chai-friendly/no-unused-expressions': ['error', { allowTernary: true }],
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
     'import/no-extraneous-dependencies': [
