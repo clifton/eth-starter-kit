@@ -1,11 +1,11 @@
-import { HardhatUserConfig } from "hardhat/types";
+import { HardhatUserConfig } from 'hardhat/types';
 
-import "@nomiclabs/hardhat-waffle";
-import "hardhat-typechain";
+import '@nomiclabs/hardhat-waffle';
+import 'hardhat-typechain';
 
 const config: HardhatUserConfig = {
   solidity: {
-    compilers: [{ version: "0.7.5", settings: {} }],
+    compilers: [{ version: '0.7.5', settings: {} }],
   },
   networks: {
     hardhat: {},
@@ -16,4 +16,5 @@ const config: HardhatUserConfig = {
   },
 };
 
+// eslint-disable-next-line import/no-default-export
 export default config;

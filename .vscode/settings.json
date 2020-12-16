@@ -9,5 +9,6 @@
   "solidity.packageDefaultDependenciesDirectory": "node_modules",
   "solidity.solhintRules": {},
   "solidity.validationDelay": 1500,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.workingDirectories": ["contracts", "scripts", "test"]
 }
