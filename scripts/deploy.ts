@@ -3,19 +3,16 @@
 import { ethers } from 'hardhat';
 
 async function main(): Promise<void> {
-  const factory = await ethers.getContractFactory('Counter');
+  const [deployer] = await ethers.getSigners();
 
-  // If we had constructor arguments, they would be passed into deploy()
-  const contract = await factory.deploy();
+  console.log('Deploying contracts with the account:', deployer.address);
 
-  // The address the Contract WILL have once mined
-  console.log('counter address:', contract.address);
+  console.log('Account balance:', (await deployer.getBalance()).toString());
 
-  // The transaction that was sent to the network to deploy the Contract
-  console.log('deploy transaction:', contract.deployTransaction.hash);
+  const HardhatTokenFactory = await ethers.getContractFactory('HardhatToken');
+  const token = await HardhatTokenFactory.deploy();
 
-  // The contract is NOT deployed yet; we must wait until it is mined
-  await contract.deployed();
+  console.log('Token address:', token.address);
 }
 
 main()

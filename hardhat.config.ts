@@ -9,10 +9,13 @@ const config: HardhatUserConfig = {
   },
   networks: {
     hardhat: {},
-    // rinkeby: {
-    //   url: `https://rinkeby.infura.io/v3/${INFURA_API_KEY}`,
-    //   accounts: [RINKEBY_PRIVATE_KEY],
-    // },
+    networks: {
+      // https://faucet.metamask.io/
+      // ropsten: {
+      //   url: `https://ropsten.infura.io/v3/${INFURA_PROJECT_ID}`,
+      //   accounts: [`0x${ROPSTEN_PRIVATE_KEY}`],
+      // },
+    },
   },
 };
 
