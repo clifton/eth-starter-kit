@@ -30,6 +30,7 @@ module.exports = {
     'no-unused-expressions': 0,
     '@typescript-eslint/no-unused-expressions': 0,
     'chai-friendly/no-unused-expressions': ['error', { allowTernary: true }],
+    'import/extensions': 0,
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
     'import/no-extraneous-dependencies': [

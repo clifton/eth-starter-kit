@@ -20,7 +20,7 @@ contract Faucet {
         require(amount <= 0.1 ether, 'amount must be less than .1 eth');
         require(
             address(this).balance >= amount,
-            'Insufficient balance in faucet for withdrawal request'
+            'Insufficient balance in faucet'
         );
 
         msg.sender.transfer(amount);
