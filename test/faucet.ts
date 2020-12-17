@@ -2,7 +2,7 @@ import { expect, use } from 'chai';
 import { deployContract, MockProvider, solidity } from 'ethereum-waffle';
 import { parseEther } from 'ethers/lib/utils';
 import { BigNumber, Wallet } from 'ethers';
-import { Faucet } from '../typechain/Faucet';
+import { Faucet } from '../typechain';
 import FaucetFactory from '../artifacts/contracts/Faucet.sol/Faucet.json';
 
 use(solidity);
