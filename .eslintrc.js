@@ -26,7 +26,11 @@ module.exports = {
   },
   rules: {
     indent: ['error', 2],
-    quotes: ['error', 'single'],
+    quotes: [
+      'error',
+      'single',
+      { avoidEscape: true, allowTemplateLiterals: true },
+    ],
     'no-unused-expressions': 0,
     '@typescript-eslint/no-unused-expressions': 0,
     'chai-friendly/no-unused-expressions': ['error', { allowTernary: true }],

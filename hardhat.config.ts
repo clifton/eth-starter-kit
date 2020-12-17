@@ -1,7 +1,12 @@
-import { HardhatUserConfig } from 'hardhat/types';
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable no-console */
+import { HardhatRuntimeEnvironment, HardhatUserConfig } from 'hardhat/types';
+import { task } from 'hardhat/config';
 
-import '@nomiclabs/hardhat-waffle';
 import 'hardhat-typechain';
+import '@nomiclabs/hardhat-waffle';
+import '@nomiclabs/hardhat-ethers';
+import { formatEther, isAddress } from 'ethers/lib/utils';
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -16,6 +21,17 @@ const config: HardhatUserConfig = {
     // },
   },
 };
+
+task('balance', "Prints an account's balance")
+  .addParam('account', "The account's address")
+  .setAction(async ({ account }, hre: HardhatRuntimeEnvironment) => {
+    if (!isAddress(account)) {
+      console.log('invalid address:', account || 'none');
+    } else {
+      const balance = await hre.ethers.provider.getBalance(account);
+      console.log('balance:', formatEther(balance), 'ETH');
+    }
+  });
 
 // eslint-disable-next-line import/no-default-export
 export default config;
