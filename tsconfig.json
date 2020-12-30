@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "ES2020",
     "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "esModuleInterop": true,
     "outDir": "dist",
-    "resolveJsonModule": true
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "lib": [
+      "ES2020"
+    ]
   },
-  "include": ["./scripts/*", "./test/*"],
-  "files": ["./hardhat.config.ts"]
+  "include": [
+    "./scripts/*",
+    "./test/*"
+  ],
+  "files": [
+    "./hardhat.config.ts"
+  ]
 }
