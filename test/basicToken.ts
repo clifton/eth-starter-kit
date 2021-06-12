@@ -1,18 +1,20 @@
+import { ethers } from 'hardhat';
 import { expect, use } from 'chai';
-import { deployContract, MockProvider, solidity } from 'ethereum-waffle';
-import BasicTokenArtifact from '../artifacts/contracts/BasicToken.sol/BasicToken.json';
-import { BasicToken } from '../typechain';
+import chaiAsPromised from 'chai-as-promised';
+import { solidity } from 'ethereum-waffle';
+import { BasicToken, BasicToken__factory } from '../typechain';
 
 use(solidity);
+use(chaiAsPromised);
 
-describe('BasicToken', () => {
-  const [wallet, walletTo] = new MockProvider().getWallets();
+describe('BasicToken', async () => {
+  const [wallet, walletTo] = await ethers.getSigners();
   let token: BasicToken;
 
   beforeEach(async () => {
-    token = (await deployContract(wallet, BasicTokenArtifact, [
-      1000,
-    ])) as BasicToken;
+    const BasicTokenFactory: BasicToken__factory =
+      (await ethers.getContractFactory('BasicToken', wallet)) as any;
+    token = await BasicTokenFactory.deploy(1000);
   });
 
   it('Assigns initial balance', async () => {

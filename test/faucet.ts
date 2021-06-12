@@ -1,30 +1,29 @@
+import { ethers } from 'hardhat';
 import { expect, use } from 'chai';
-import { deployContract, MockProvider, solidity } from 'ethereum-waffle';
-import { parseEther } from 'ethers/lib/utils';
+import chaiAsPromised from 'chai-as-promised';
+import { solidity } from 'ethereum-waffle';
+import { Faucet, Faucet__factory } from '../typechain';
 import { BigNumber, Wallet } from 'ethers';
-import { Faucet } from '../typechain';
-import FaucetFactory from '../artifacts/contracts/Faucet.sol/Faucet.json';
+import { parseEther } from 'ethers/lib/utils';
 
 use(solidity);
+use(chaiAsPromised);
 
-describe('Faucet', () => {
-  let provider: MockProvider;
-  let wallet: Wallet;
+describe('Faucet', async () => {
+  const [signer, wallet] = await ethers.getSigners();
 
   async function createFaucet(initialBalance: BigNumber): Promise<Faucet> {
-    const signer = provider.getSigner();
-    const faucet = (await deployContract(signer, FaucetFactory)) as Faucet;
+    const FaucetFactory: Faucet__factory = (await ethers.getContractFactory(
+      'Faucet',
+      wallet
+    )) as any;
+    const faucet = await FaucetFactory.deploy();
     await wallet.sendTransaction({
       to: faucet.address,
       value: initialBalance,
     });
     return faucet;
   }
-
-  beforeEach(async () => {
-    provider = new MockProvider();
-    [wallet] = provider.getWallets();
-  });
 
   it('withdraws to a wallet', async () => {
     const faucet = await createFaucet(parseEther('100'));

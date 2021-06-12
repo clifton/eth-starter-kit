@@ -1,9 +1,11 @@
 import { ethers } from 'hardhat';
 import { expect, use } from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 import { solidity } from 'ethereum-waffle';
-import { Counter } from '../typechain';
+import { Counter, Counter__factory } from '../typechain';
 
 use(solidity);
+use(chaiAsPromised);
 
 describe('Counter', (): void => {
   let counter: Counter;
@@ -11,11 +13,11 @@ describe('Counter', (): void => {
     // 1
     const signers = await ethers.getSigners();
     // 2
-    const counterFactory = await ethers.getContractFactory(
+    const counterFactory: Counter__factory = (await ethers.getContractFactory(
       'Counter',
       signers[0]
-    );
-    counter = (await counterFactory.deploy()) as Counter;
+    )) as any;
+    counter = await counterFactory.deploy();
     await counter.deployed();
     const initialCount = await counter.getCount();
     // 3

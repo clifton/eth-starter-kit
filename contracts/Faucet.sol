@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.7.5;
+pragma solidity ^0.8.0;
 
 // from "Mastering Ethereum"
 contract Faucet {
@@ -8,7 +8,7 @@ contract Faucet {
     event Deposit(address indexed from, uint256 amount);
 
     constructor() {
-        owner = msg.sender;
+        owner = payable(msg.sender);
     }
 
     modifier onlyOwner {
@@ -23,7 +23,7 @@ contract Faucet {
             'Insufficient balance in faucet'
         );
 
-        msg.sender.transfer(amount);
+        payable(msg.sender).transfer(amount);
         emit Withdrawal(msg.sender, amount);
     }
 

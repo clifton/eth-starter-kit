@@ -1,11 +1,12 @@
 import { HardhatUserConfig } from 'hardhat/types';
 
 import '@nomiclabs/hardhat-waffle';
-import 'hardhat-typechain';
+import '@typechain/hardhat';
+import '@nomiclabs/hardhat-ethers';
 
 const config: HardhatUserConfig = {
   solidity: {
-    compilers: [{ version: '0.7.5' }],
+    compilers: [{ version: '0.8.5' }],
   },
   networks: {
     hardhat: {},
