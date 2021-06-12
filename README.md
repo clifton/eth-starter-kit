@@ -1,8 +1,14 @@
 # ETH smart contract starter kit
 
-## install
+## get started
 
-`yarn install`
+tested with node.js v14
+
+1. `npm install -g yarn`
+2. `yarn install`
+3. `npx hardhat compile`: generate typechain artifacts
+4. `code .`: open in vs code
+5. install recommended vscode extensions
 
 ## libraries
 
@@ -17,10 +23,12 @@
 
 ## usage
 
-- testing: `hardhat test`
-- compiling: `hardhat compile`
-- deploy: `hardhat run script/deploy.ts`
+- compile: `npx hardhat compile`
+- test: `npx hardhat test`
+- deploy: `npx hardhat run script/deploy.ts`
+- create your own scripts or smart contracts!
 
 ## sources
 
-various, most of this is not original code
+- [hardhat examples](https://hardhat.org/guides/waffle-testing.html)
+- [mastering ethereum](https://github.com/ethereumbook/ethereumbook)
