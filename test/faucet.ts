@@ -2,9 +2,9 @@ import { ethers } from 'hardhat';
 import { expect, use } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import { solidity } from 'ethereum-waffle';
-import { Faucet, Faucet__factory } from '../typechain';
-import { BigNumber, Wallet } from 'ethers';
+import { BigNumber } from 'ethers';
 import { parseEther } from 'ethers/lib/utils';
+import { Faucet, Faucet__factory } from '../typechain';
 
 use(solidity);
 use(chaiAsPromised);
@@ -15,8 +15,8 @@ describe('Faucet', async () => {
   async function createFaucet(initialBalance: BigNumber): Promise<Faucet> {
     const FaucetFactory: Faucet__factory = (await ethers.getContractFactory(
       'Faucet',
-      wallet
-    )) as any;
+      signer
+    )) as never;
     const faucet = await FaucetFactory.deploy();
     await wallet.sendTransaction({
       to: faucet.address,

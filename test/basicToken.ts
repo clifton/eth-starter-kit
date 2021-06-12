@@ -13,7 +13,7 @@ describe('BasicToken', async () => {
 
   beforeEach(async () => {
     const BasicTokenFactory: BasicToken__factory =
-      (await ethers.getContractFactory('BasicToken', wallet)) as any;
+      (await ethers.getContractFactory('BasicToken', wallet)) as never;
     token = await BasicTokenFactory.deploy(1000);
   });
 

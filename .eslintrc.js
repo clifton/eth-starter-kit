@@ -10,14 +10,14 @@ module.exports = {
     'eslint-comments',
     'promise',
     'chai-friendly',
+    'prettier',
   ],
   extends: [
     'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
     'plugin:promise/recommended',
     'plugin:eslint-comments/recommended',
-    'prettier',
-    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
   ],
   parserOptions: {
     ecmaVersion: 12,

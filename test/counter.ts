@@ -16,7 +16,7 @@ describe('Counter', (): void => {
     const counterFactory: Counter__factory = (await ethers.getContractFactory(
       'Counter',
       signers[0]
-    )) as any;
+    )) as never;
     counter = await counterFactory.deploy();
     await counter.deployed();
     const initialCount = await counter.getCount();
