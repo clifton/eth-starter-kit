@@ -21,7 +21,7 @@ jobs:
       - name: Install
         run: yarn install
       - name: Lint Contracts
-        run: npx solhint contracts/*
+        run: npx solhint contracts/**/*
       - name: Lint js
         run: npx eslint scripts test
       - name: Compile contracts
