@@ -4,7 +4,7 @@ import chaiAsPromised from 'chai-as-promised';
 import { solidity } from 'ethereum-waffle';
 import { BigNumber } from 'ethers';
 import { parseEther } from 'ethers/lib/utils';
-import { Faucet, Faucet__factory } from '../typechain';
+import { Faucet, Faucet__factory } from '../typechain-types';
 
 use(solidity);
 use(chaiAsPromised);

@@ -11,6 +11,7 @@ module.exports = {
     'promise',
     'chai-friendly',
     'prettier',
+    'import',
   ],
   extends: [
     'airbnb-typescript/base',

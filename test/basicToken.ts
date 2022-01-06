@@ -2,7 +2,7 @@ import { ethers } from 'hardhat';
 import { expect, use } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import { solidity } from 'ethereum-waffle';
-import { BasicToken, BasicToken__factory } from '../typechain';
+import { BasicToken, BasicToken__factory } from '../typechain-types';
 
 use(solidity);
 use(chaiAsPromised);
