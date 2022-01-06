@@ -6,7 +6,7 @@ import '@nomiclabs/hardhat-ethers';
 
 const config: HardhatUserConfig = {
   solidity: {
-    compilers: [{ version: '0.8.5' }],
+    compilers: [{ version: '0.8.11' }],
   },
   networks: {
     hardhat: {},
